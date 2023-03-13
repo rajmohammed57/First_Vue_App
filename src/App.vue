@@ -1,17 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+ <div>Hello {{ name }} </div>  
+ <h1 v-bind:class="{red: isRed, italic: isItalic}"> Hi </h1>
+ 
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  data() {
+    return {
+      name: "Mohammed",
+      isRed: true,
+      isItalic: true,
+
+    };
+  },
+};
 </script>
 
 <style>
@@ -22,5 +27,14 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+.red{
+  color: red;
+
+}
+
+.italic{
+  font-style: italic;
 }
 </style>
